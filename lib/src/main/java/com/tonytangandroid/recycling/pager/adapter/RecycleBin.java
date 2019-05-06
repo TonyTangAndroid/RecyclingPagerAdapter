@@ -1,6 +1,5 @@
 package com.tonytangandroid.recycling.pager.adapter;
 
-import android.os.Build;
 import android.util.SparseArray;
 import android.view.View;
 
@@ -61,7 +60,7 @@ class RecycleBin {
         //noinspection unchecked
         SparseArray<View>[] scrapViews = new SparseArray[viewTypeCount];
         for (int i = 0; i < viewTypeCount; i++) {
-            scrapViews[i] = new SparseArray<View>();
+            scrapViews[i] = new SparseArray<>();
         }
         this.viewTypeCount = viewTypeCount;
         currentScrapViews = scrapViews[0];
@@ -96,9 +95,7 @@ class RecycleBin {
             scrapViews[viewType].put(position, scrap);
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            scrap.setAccessibilityDelegate(null);
-        }
+        scrap.setAccessibilityDelegate(null);
     }
 
     /**
@@ -128,9 +125,7 @@ class RecycleBin {
                 }
                 scrapViews.put(i, victim);
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                    victim.setAccessibilityDelegate(null);
-                }
+                victim.setAccessibilityDelegate(null);
             }
         }
 
