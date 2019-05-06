@@ -2,6 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion = '28.0.3'
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
     defaultConfig {
         applicationId "com.tonytangandroid.recycling.pager.adapter.demo"
         minSdkVersion 21
